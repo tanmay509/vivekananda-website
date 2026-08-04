@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vivekananda Computer Center - Professional computer training courses in Web Development, Data Science, Python, and more.">
+  <title>Vivekananda Computer Center | Learn. Build. Succeed.</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVIGATION ==================== -->
+  <header class="header" id="header">
+    <nav class="navbar container">
+      <a href="#home" class="logo">
+        <span class="logo-icon" aria-hidden="true">💻</span>
+        <span class="logo-text">VCC<span class="logo-accent">Training</span></span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#courses" class="nav-link">Courses</a></li>
+        <li><a href="#faculty" class="nav-link">Faculty</a></li>
+        <li><a href="#student-corner" class="nav-link">Student Corner</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <span class="hero-badge">🎓 Trusted Since 2010</span>
+          <h1 class="hero-title">Empower Your Future with <span class="text-accent">Digital Skills</span></h1>
+          <p class="hero-subtitle">
+            Join Vivekananda Computer Center and master in-demand technologies through hands-on training,
+            expert mentorship, and industry-aligned curriculum.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Enroll Now</a>
+            <a href="#courses" class="btn btn-outline">View Courses</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">5000+</span>
+              <span class="stat-label">Students Trained</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">25+</span>
+              <span class="stat-label">Expert Faculty</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Courses Offered</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-illustration" role="img" aria-label="Students learning computer skills">
+            <div class="illustration-screen">
+              <div class="code-line"></div>
+              <div class="code-line short"></div>
+              <div class="code-line medium"></div>
+              <div class="code-line"></div>
+            </div>
+            <div class="illustration-keyboard"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT US ==================== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Us</span>
+          <h2 class="section-title">Building Tech Leaders Since 2010</h2>
+          <p class="section-desc">Dedicated to making quality computer education accessible to everyone.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-image">
+            <div class="about-img-placeholder" role="img" aria-label="Computer training classroom">
+              <span class="placeholder-icon">🏫</span>
+              <span class="placeholder-text">Our Training Center</span>
+            </div>
+          </div>
+          <div class="about-content">
+            <h3>Our Mission</h3>
+            <p>
+              At Vivekananda Computer Center, we believe technology education should be practical,
+              affordable, and career-focused. Our mission is to bridge the digital divide by equipping
+              students with skills that employers actually need.
+            </p>
+            <h3>Our History</h3>
+            <p>
+              Founded in 2010, VCC started as a small computer lab with just 10 computers. Today,
+              we operate a state-of-the-art facility with modern labs, high-speed internet, and
+              partnerships with leading tech companies for internships and placements.
+            </p>
+            <h3>Core Values</h3>
+            <ul class="values-list">
+              <li>
+                <span class="value-icon">✦</span>
+                <div>
+                  <strong>Excellence</strong>
+                  <p>Delivering top-quality education with updated curriculum.</p>
+                </div>
+              </li>
+              <li>
+                <span class="value-icon">✦</span>
+                <div>
+                  <strong>Integrity</strong>
+                  <p>Transparent fees, honest guidance, and ethical practices.</p>
+                </div>
+              </li>
+              <li>
+                <span class="value-icon">✦</span>
+                <div>
+                  <strong>Innovation</strong>
+                  <p>Embracing new technologies and modern teaching methods.</p>
+                </div>
+              </li>
+              <li>
+                <span class="value-icon">✦</span>
+                <div>
+                  <strong>Community</strong>
+                  <p>Supporting every student's journey from beginner to professional.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COURSES ==================== -->
+    <section class="section courses" id="courses">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Our Courses</span>
+          <h2 class="section-title">Explore Our Programs</h2>
+          <p class="section-desc">Industry-relevant courses designed to launch your tech career.</p>
+        </div>
+        <div class="courses-grid">
+
+          <article class="course-card">
+            <div class="course-icon" aria-hidden="true">🌐</div>
+            <div class="course-image-placeholder" role="img" aria-label="Web Development course"></div>
+            <div class="course-body">
+              <h3 class="course-title">Web Development</h3>
+              <p class="course-desc">
+                Master HTML, CSS, JavaScript, and modern frameworks. Build responsive websites
+                and full-stack applications from scratch.
+              </p>
+              <div class="course-meta">
+                <span class="course-duration">⏱ 6 Months</span>
+                <span class="course-level">Beginner – Advanced</span>
+              </div>
+              <a href="#contact" class="btn btn-secondary btn-sm">Learn More</a>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-icon" aria-hidden="true">📊</div>
+            <div class="course-image-placeholder data-science" role="img" aria-label="Data Science course"></div>
+            <div class="course-body">
+              <h3 class="course-title">Data Science</h3>
+              <p class="course-desc">
+                Learn Python, statistics, machine learning, and data visualization.
+                Analyze real-world datasets and build predictive models.
+              </p>
+              <div class="course-meta">
+                <span class="course-duration">⏱ 8 Months</span>
+                <span class="course-level">Intermediate</span>
+              </div>
+              <a href="#contact" class="btn btn-secondary btn-sm">Learn More</a>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-icon" aria-hidden="true">🐍</div>
+            <div class="course-image-placeholder python" role="img" aria-label="Python Programming course"></div>
+            <div class="course-body">
+              <h3 class="course-title">Python Programming</h3>
+              <p class="course-desc">
+                From fundamentals to advanced topics including automation, web scraping,
+                and application development with Django and Flask.
+              </p>
+              <div class="course-meta">
+                <span class="course-duration">⏱ 4 Months</span>
+                <span class="course-level">Beginner</span>
+              </div>
+              <a href="#contact" class="btn btn-secondary btn-sm">Learn More</a>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-icon" aria-hidden="true">🎨</div>
+            <div class="course-image-placeholder graphic" role="img" aria-label="Graphic Design course"></div>
+            <div class="course-body">
+              <h3 class="course-title">Graphic Design</h3>
+              <p class="course-desc">
+                Create stunning visuals with Photoshop, Illustrator, and Figma.
+                Learn branding, UI design, and print media production.
+              </p>
+              <div class="course-meta">
+                <span class="course-duration">⏱ 5 Months</span>
+                <span class="course-level">Beginner – Intermediate</span>
+              </div>
+              <a href="#contact" class="btn btn-secondary btn-sm">Learn More</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FACULTY ==================== -->
+    <section class="section faculty" id="faculty">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Our Faculty</span>
+          <h2 class="section-title">Learn from Industry Experts</h2>
+          <p class="section-desc">Experienced professionals passionate about teaching and mentoring.</p>
+        </div>
+        <div class="faculty-grid">
+
+          <article class="faculty-card">
+            <div class="faculty-avatar" aria-hidden="true">
+              <span>RK</span>
+            </div>
+            <h3 class="faculty-name">Rajesh Kumar</h3>
+            <p class="faculty-designation">Senior Web Developer & Lead Instructor</p>
+            <p class="faculty-bio">
+              12+ years in full-stack development. Former tech lead at a Fortune 500 company.
+              Specializes in React, Node.js, and cloud architecture.
+            </p>
+          </article>
+
+          <article class="faculty-card">
+            <div class="faculty-avatar avatar-teal" aria-hidden="true">
+              <span>PS</span>
+            </div>
+            <h3 class="faculty-name">Priya Sharma</h3>
+            <p class="faculty-designation">Data Scientist & ML Instructor</p>
+            <p class="faculty-bio">
+              PhD in Computer Science with expertise in machine learning and AI.
+              Published researcher with 8 years of industry experience.
+            </p>
+          </article>
+
+          <article class="faculty-card">
+            <div class="faculty-avatar avatar-orange" aria-hidden="true">
+              <span>AM</span>
+            </div>
+            <h3 class="faculty-name">Amit Mehta</h3>
+            <p class="faculty-designation">Python & Automation Expert</p>
+            <p class="faculty-bio">
+              Certified Python developer and automation specialist. Has trained 2000+
+              students in scripting, Django, and DevOps fundamentals.
+            </p>
+          </article>
+
+          <article class="faculty-card">
+            <div class="faculty-avatar avatar-purple" aria-hidden="true">
+              <span>SJ</span>
+            </div>
+            <h3 class="faculty-name">Sneha Joshi</h3>
+            <p class="faculty-designation">Creative Director & Design Instructor</p>
+            <p class="faculty-bio">
+              Award-winning graphic designer with 10 years of experience in branding,
+              UI/UX design, and digital marketing creatives.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STUDENT CORNER ==================== -->
+    <section class="section student-corner" id="student-corner">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Student Corner</span>
+          <h2 class="section-title">Stay Updated & Inspired</h2>
+          <p class="section-desc">Latest notices, achievements, and helpful resources for our students.</p>
+        </div>
+        <div class="student-grid">
+
+          <!-- Notice Board -->
+          <div class="notice-board">
+            <div class="panel-header">
+              <span class="panel-icon" aria-hidden="true">📌</span>
+              <h3>Notice Board</h3>
+            </div>
+            <ul class="notice-list">
+              <li class="notice-item">
+                <span class="notice-date">Aug 1, 2026</span>
+                <p class="notice-text">New batch for Web Development starts August 15. Limited seats available!</p>
+              </li>
+              <li class="notice-item">
+                <span class="notice-date">Jul 28, 2026</span>
+                <p class="notice-text">Holiday notice: Center closed on August 15 for Independence Day.</p>
+              </li>
+              <li class="notice-item">
+                <span class="notice-date">Jul 20, 2026</span>
+                <p class="notice-text">Free workshop on "Introduction to AI" — Open to all enrolled students.</p>
+              </li>
+              <li class="notice-item">
+                <span class="notice-date">Jul 10, 2026</span>
+                <p class="notice-text">Exam schedule for Data Science batch released. Check the student portal.</p>
+              </li>
+              <li class="notice-item">
+                <span class="notice-date">Jul 1, 2026</span>
+                <p class="notice-text">Summer internship placements announced. Apply before July 31.</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Achievements & Resources -->
+          <div class="achievements-panel">
+            <div class="panel-header">
+              <span class="panel-icon" aria-hidden="true">🏆</span>
+              <h3>Student Achievements</h3>
+            </div>
+            <div class="achievement-cards">
+              <div class="achievement-card">
+                <div class="achievement-badge">🥇</div>
+                <div>
+                  <h4>Rahul Verma</h4>
+                  <p>Placed at TCS as Junior Developer — Web Development Batch 2025</p>
+                </div>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-badge">🥈</div>
+                <div>
+                  <h4>Ananya Patel</h4>
+                  <p>Won 2nd place in State-Level Coding Hackathon 2026</p>
+                </div>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-badge">🥉</div>
+                <div>
+                  <h4>Vikram Singh</h4>
+                  <p>Completed Google Data Analytics Certificate — Data Science Batch</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resources-block">
+              <h4>Quick Resources</h4>
+              <ul class="resources-list">
+                <li><a href="#">📄 Course Syllabus Downloads</a></li>
+                <li><a href="#">📚 E-Library & Study Materials</a></li>
+                <li><a href="#">💼 Placement Assistance Portal</a></li>
+                <li><a href="#">📝 Online Fee Payment</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT & LOCATION ==================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Location & Contact Us</h2>
+          <p class="section-desc">Visit us, call us, or send a message — we'd love to hear from you.</p>
+        </div>
+        <div class="contact-grid">
+
+              <div class="form-group">
+                <label for="course">Course of Interest <span class="required">*</span></label>
+                <select id="course" name="course" required>
+                  <option value="" disabled selected>Select a course</option>
+                  <option value="web-dev">Web Development</option>
+                  <option value="data-science">Data Science</option>
+                  <option value="python">Python Programming</option>
+                  <option value="graphic-design">Graphic Design</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="error-msg" id="course-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about your goals or questions..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Submit Inquiry</button>
+            </form>
+          </div>
+
+          <!-- Contact Info & Map -->
+          <div class="contact-info-wrapper">
+            <div class="contact-details">
+              <h3>Visit Our Center</h3>
+              <div class="detail-item">
+                <span class="detail-icon" aria-hidden="true">📍</span>
+                <div>
+                  <strong>Address</strong>
+                  <p>123 Tech Park Road, Sector 5,<br>Near City Mall, New Delhi – 110001</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon" aria-hidden="true">📞</span>
+                <div>
+                  <strong>Phone</strong>
+                  <p>+91 98765 43210<br>+91 11 2345 6789</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon" aria-hidden="true">✉️</span>
+                <div>
+                  <strong>Email</strong>
+                  <p>info@vcctraining.com<br>admissions@vcctraining.com</p>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon" aria-hidden="true">🕐</span>
+                <div>
+                  <strong>Working Hours</strong>
+                  <p>Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: Closed</p>
+                </div>
+              </div>
+            </div>
+            <div class="map-wrapper">
+              <iframe
+                title="Vivekananda Computer Center Location"
+                src="https://maps.google.com/maps?q=New+Delhi+India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="250"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo footer-logo">
+          <span class="logo-icon" aria-hidden="true">💻</span>
+          <span class="logo-text">VCC<span class="logo-accent">Training</span></span>
+        </a>
+        <p class="footer-desc">
+          Empowering students with practical computer skills for a successful digital career since 2010.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#faculty">Faculty</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="#courses">Web Development</a></li>
+          <li><a href="#courses">Data Science</a></li>
+          <li><a href="#courses">Python Programming</a></li>
+          <li><a href="#courses">Graphic Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 New Delhi – 110001</li>
+          <li>📞 +91 98765 43210</li>
+          <li>✉️ info@vcctraining.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Vivekananda Computer Center. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
