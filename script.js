@@ -1,275 +1,191 @@
-/**
- * Vivekananda Computer Center — Main JavaScript
- * Handles: mobile nav, smooth scroll, active nav links, form validation
- */
+// Splash screen
+const splash = document.getElementById('initial-splash');
 
-(function () {
-  'use strict';
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    splash.classList.add('hide');
+  }, 1200);
+});
 
-  /* ==========================================================
-     DOM Element References
-     ========================================================== */
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const header = document.getElementById('header');
-  const contactForm = document.getElementById('contact-form');
-  const sections = document.querySelectorAll('section[id]');
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.getElementById('menu-icon');
 
-  /* ==========================================================
-     1. Mobile Hamburger Menu Toggle
-     ========================================================== */
-  function toggleMenu() {
-    const isOpen = hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', isOpen);
+mobileMenuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  const isOpen = !mobileMenu.classList.contains('hidden');
+  menuIcon.classList.toggle('fa-bars', !isOpen);
+  menuIcon.classList.toggle('fa-times', isOpen);
+});
 
-    // Prevent body scroll when menu is open on mobile
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuIcon.classList.remove('fa-times');
+    menuIcon.classList.add('fa-bars');
+  });
+});
+
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active', 'text-primary-500', 'bg-white/5');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active', 'text-primary-500', 'bg-white/5');
+    }
+  });
+});
+
+// Scroll reveal animation
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+);
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Animated stat counters
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target, 10);
+  const duration = 2000;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(eased * target);
+    el.textContent = `${current}+`;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    }
   }
 
-  function closeMenu() {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', 'false');
+  requestAnimationFrame(update);
+}
+
+const statObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        statObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
+
+// Back to top button
+const backToTop = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTop.classList.remove('opacity-0', 'invisible');
+    backToTop.classList.add('opacity-100', 'visible');
+  } else {
+    backToTop.classList.add('opacity-0', 'invisible');
+    backToTop.classList.remove('opacity-100', 'visible');
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Course syllabus toggle
+function toggleSyllabus(button) {
+  const syllabus = button.nextElementSibling;
+  const isHidden = syllabus.classList.contains('hidden');
+
+  syllabus.classList.toggle('hidden');
+  button.innerHTML = isHidden
+    ? 'Hide Syllabus <i class="fas fa-chevron-down text-xs transition-transform" style="transform: rotate(180deg)"></i>'
+    : 'View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>';
+}
+
+// Lightbox for student corner
+function openLightbox(figure) {
+  const img = figure.querySelector('img');
+  const caption = figure.querySelector('h3');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightboxCaption.textContent = caption ? caption.textContent : img.alt;
+  lightbox.classList.remove('hidden');
+  lightbox.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(event) {
+  if (event.target.id === 'lightbox' || event.target.closest('button')) {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
     document.body.style.overflow = '';
   }
+}
 
-  hamburger.addEventListener('click', toggleMenu);
-
-  // Close menu when a nav link is clicked
-  navLinks.forEach(function (link) {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', function (e) {
-    if (
-      navMenu.classList.contains('active') &&
-      !navMenu.contains(e.target) &&
-      !hamburger.contains(e.target)
-    ) {
-      closeMenu();
-    }
-  });
-
-  /* ==========================================================
-     2. Smooth Scrolling for Navbar Links
-     ========================================================== */
-  navLinks.forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-
-      if (targetSection) {
-        const headerOffset = header.offsetHeight;
-        const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - headerOffset;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // Also handle footer and other anchor links with hash hrefs
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    if (anchor.classList.contains('nav-link')) return; // Already handled above
-
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-
-      const targetSection = document.querySelector(targetId);
-      if (targetSection) {
-        e.preventDefault();
-        const headerOffset = header.offsetHeight;
-        const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - headerOffset;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  /* ==========================================================
-     3. Active Nav Link on Scroll (Scroll Spy)
-     ========================================================== */
-  function setActiveNavLink() {
-    const scrollPosition = window.scrollY + header.offsetHeight + 100;
-
-    sections.forEach(function (section) {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        navLinks.forEach(function (link) {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + sectionId) {
-            link.classList.add('active');
-          }
-        });
-      }
-    });
-  }
-
-  /* ==========================================================
-     4. Header Shadow on Scroll
-     ========================================================== */
-  function handleHeaderScroll() {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox.classList.contains('hidden')) {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
     }
   }
+});
 
-  // Throttled scroll handler for performance
-  let scrollTicking = false;
+// Apply form submission
+const applyForm = document.getElementById('apply-form');
+const formSuccess = document.getElementById('form-success');
 
-  window.addEventListener('scroll', function () {
-    if (!scrollTicking) {
-      window.requestAnimationFrame(function () {
-        setActiveNavLink();
-        handleHeaderScroll();
-        scrollTicking = false;
-      });
-      scrollTicking = true;
-    }
-  });
+applyForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  applyForm.classList.add('hidden');
+  formSuccess.classList.remove('hidden');
 
-  // Run once on page load
-  setActiveNavLink();
-  handleHeaderScroll();
-
-  /* ==========================================================
-     5. Contact Form Validation
-     ========================================================== */
-
-  /**
-   * Display an error message for a form field
-   * @param {string} fieldId - The input element ID
-   * @param {string} message - Error message to display
-   */
-  function showError(fieldId, message) {
-    const field = document.getElementById(fieldId);
-    const errorEl = document.getElementById(fieldId + '-error');
-    field.classList.add('error');
-    errorEl.textContent = message;
-  }
-
-  /**
-   * Clear error state for a form field
-   * @param {string} fieldId - The input element ID
-   */
-  function clearError(fieldId) {
-    const field = document.getElementById(fieldId);
-    const errorEl = document.getElementById(fieldId + '-error');
-    field.classList.remove('error');
-    errorEl.textContent = '';
-  }
-
-  /**
-   * Validate email format
-   * @param {string} email
-   * @returns {boolean}
-   */
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-
-  /**
-   * Validate phone number (basic — 10+ digits)
-   * @param {string} phone
-   * @returns {boolean}
-   */
-  function isValidPhone(phone) {
-    return /^[\d\s+\-()]{10,}$/.test(phone.trim());
-  }
-
-  /**
-   * Validate the entire contact form
-   * @returns {boolean} True if all fields are valid
-   */
-  function validateForm() {
-    let isValid = true;
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const course = document.getElementById('course').value;
-
-    // Clear all previous errors
-    ['name', 'email', 'phone', 'course'].forEach(clearError);
-
-    // Name validation
-    if (name === '') {
-      showError('name', 'Please enter your full name.');
-      isValid = false;
-    } else if (name.length < 2) {
-      showError('name', 'Name must be at least 2 characters.');
-      isValid = false;
-    }
-
-    // Email validation
-    if (email === '') {
-      showError('email', 'Please enter your email address.');
-      isValid = false;
-    } else if (!isValidEmail(email)) {
-      showError('email', 'Please enter a valid email address.');
-      isValid = false;
-    }
-
-    // Phone validation
-    if (phone === '') {
-      showError('phone', 'Please enter your phone number.');
-      isValid = false;
-    } else if (!isValidPhone(phone)) {
-      showError('phone', 'Please enter a valid phone number (min 10 digits).');
-      isValid = false;
-    }
-
-    // Course validation
-    if (course === '' || course === null) {
-      showError('course', 'Please select a course of interest.');
-      isValid = false;
-    }
-
-    return isValid;
-  }
-
-  // Clear errors on input
-  ['name', 'email', 'phone', 'course'].forEach(function (fieldId) {
-    const field = document.getElementById(fieldId);
-    field.addEventListener('input', function () {
-      clearError(fieldId);
-    });
-    field.addEventListener('change', function () {
-      clearError(fieldId);
-    });
-  });
-
-  // Form submission handler
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    if (validateForm()) {
-      // Simulate successful submission
-      alert(
-        '✅ Thank you for your inquiry!\n\n' +
-        'We have received your message and will get back to you within 24 hours.\n\n' +
-        '— Vivekananda Computer Center'
-      );
-
-      // Reset the form
-      contactForm.reset();
-    }
-  });
-
-})();
+  setTimeout(() => {
+    applyForm.reset();
+    applyForm.classList.remove('hidden');
+    formSuccess.classList.add('hidden');
+  }, 5000);
+});

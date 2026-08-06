@@ -1,517 +1,928 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vivekananda Computer Center - Professional computer training courses in Web Development, Data Science, Python, and more.">
-  <title>Vivekananda Computer Center | Learn. Build. Succeed.</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="images/vivekananda.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vivekananda Computer Center - Professional computer training with certified courses, expert faculty, and career-focused education." />
+  <title>Vivekananda Computer Center | Computer Training Institute</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { 50: '#fff7ed', 100: '#ffedd5', 500: '#e8602e', 600: '#e8602e', 700: '#d4531f', 800: '#b8441a', 900: '#0a0a0a' },
+            accent: { 400: '#f59e0b', 500: '#e8602e', 600: '#d4531f' },
+            dark: { 950: '#000000', 900: '#0a0a0a', 800: '#111111', 700: '#161616', 600: '#1f1f1f' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Poppins', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="font-sans text-gray-300 bg-black antialiased">
 
-  <!-- ==================== HEADER / NAVIGATION ==================== -->
-  <header class="header" id="header">
-    <nav class="navbar container">
-      <a href="#home" class="logo">
-        <span class="logo-icon" aria-hidden="true">💻</span>
-        <span class="logo-text">VCC<span class="logo-accent">Training</span></span>
-      </a>
+  <!-- Splash Screen -->
+  <div id="initial-splash">
+    <div class="glow-bg"></div>
+    <div class="splash-content">
+      <div class="logo-container">
+        <div class="splash-logo">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+      </div>
+      <div>
+        <div class="splash-title">Vivekananda</div>
+        <div class="splash-subtitle">Computer Center</div>
+      </div>
+      <div class="loader-dots">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+    </div>
+  </div>
 
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
+  <!-- Navigation -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center shadow-lg shadow-primary-600/30 group-hover:scale-105 transition-transform">
+            <img src="images/vivekananda.jpg" alt="Vivekananda Computer Center" class="w-full h-full object-cover rounded-xl">
+          </div>
+          <div class="hidden sm:block">
+            <span class="font-display font-bold text-white text-sm lg:text-base leading-tight block">Vivekananda</span>
+            <span class="text-xs lg:text-sm text-gray-500 font-medium">Computer Center</span>
+          </div>
+        </a>
 
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#courses" class="nav-link">Courses</a></li>
-        <li><a href="#faculty" class="nav-link">Faculty</a></li>
-        <li><a href="#student-corner" class="nav-link">Student Corner</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+        <ul id="nav-menu" class="hidden lg:flex items-center gap-1">
+          <li><a href="#home" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-primary-500 hover:bg-white/5 transition-colors">Home</a></li>
+          <li><a href="#about" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-primary-500 hover:bg-white/5 transition-colors">About Us</a></li>
+          <li><a href="#courses" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-primary-500 hover:bg-white/5 transition-colors">Courses</a></li>
+          <li><a href="#faculty" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-primary-500 hover:bg-white/5 transition-colors">Faculty</a></li>
+          <li><a href="#student-corner" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-primary-500 hover:bg-white/5 transition-colors">Student Corner</a></li>
+          <li><a href="#contact" class="nav-link px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-primary-500 hover:bg-white/5 transition-colors">Contact Us</a></li>
+        </ul>
+
+        <div class="hidden lg:block">
+          <a href="#apply" class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-primary-600/40 hover:shadow-primary-600/50 transition-all hover:-translate-y-0.5">
+            Apply Now <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-300 hover:bg-white/10 transition-colors" aria-label="Toggle menu">
+          <i class="fas fa-bars text-xl" id="menu-icon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden pb-4 border-t border-white/10 mt-2">
+        <ul class="flex flex-col gap-1 pt-3">
+          <li><a href="#home" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-primary-500 font-medium">Home</a></li>
+          <li><a href="#about" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-primary-500 font-medium">About Us</a></li>
+          <li><a href="#courses" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-primary-500 font-medium">Courses</a></li>
+          <li><a href="#faculty" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-primary-500 font-medium">Faculty</a></li>
+          <li><a href="#student-corner" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-primary-500 font-medium">Student Corner</a></li>
+          <li><a href="#contact" class="mobile-nav-link block px-4 py-3 rounded-lg text-gray-300 hover:bg-white/5 hover:text-primary-500 font-medium">Contact Us</a></li>
+          <li class="pt-2 px-4">
+            <a href="#apply" class="mobile-nav-link block text-center bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-xl font-semibold">Apply Now</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
-  <main>
+  <!-- Hero / Home -->
+  <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23e8602e\" fill-opacity=\"0.03\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero" id="home">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-content">
-        <div class="hero-text">
-          <span class="hero-badge">🎓 Trusted Since 2010</span>
-          <h1 class="hero-title">Empower Your Future with <span class="text-accent">Digital Skills</span></h1>
-          <p class="hero-subtitle">
-            Join Vivekananda Computer Center and master in-demand technologies through hands-on training,
-            expert mentorship, and industry-aligned curriculum.
-          </p>
-          <div class="hero-cta">
-            <a href="#contact" class="btn btn-primary">Enroll Now</a>
-            <a href="#courses" class="btn btn-outline">View Courses</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat">
-              <span class="stat-number">5000+</span>
-              <span class="stat-label">Students Trained</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">25+</span>
-              <span class="stat-label">Expert Faculty</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">15+</span>
-              <span class="stat-label">Courses Offered</span>
-            </div>
-          </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="text-white space-y-6 lg:space-y-8">
+        <div class="hero-badge inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 text-sm">
+          <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
+          Admissions Open 2026
         </div>
-        <div class="hero-image">
-          <div class="hero-illustration" role="img" aria-label="Students learning computer skills">
-            <div class="illustration-screen">
-              <div class="code-line"></div>
-              <div class="code-line short"></div>
-              <div class="code-line medium"></div>
-              <div class="code-line"></div>
-            </div>
-            <div class="illustration-keyboard"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== ABOUT US ==================== -->
-    <section class="section about" id="about">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">About Us</span>
-          <h2 class="section-title">Building Tech Leaders Since 2010</h2>
-          <p class="section-desc">Dedicated to making quality computer education accessible to everyone.</p>
-        </div>
-        <div class="about-grid">
-          <div class="about-image">
-            <div class="about-img-placeholder" role="img" aria-label="Computer training classroom">
-              <span class="placeholder-icon">🏫</span>
-              <span class="placeholder-text">Our Training Center</span>
-            </div>
-          </div>
-          <div class="about-content">
-            <h3>Our Mission</h3>
-            <p>
-              At Vivekananda Computer Center, we believe technology education should be practical,
-              affordable, and career-focused. Our mission is to bridge the digital divide by equipping
-              students with skills that employers actually need.
-            </p>
-            <h3>Our History</h3>
-            <p>
-              Founded in 2010, VCC started as a small computer lab with just 10 computers. Today,
-              we operate a state-of-the-art facility with modern labs, high-speed internet, and
-              partnerships with leading tech companies for internships and placements.
-            </p>
-            <h3>Core Values</h3>
-            <ul class="values-list">
-              <li>
-                <span class="value-icon">✦</span>
-                <div>
-                  <strong>Excellence</strong>
-                  <p>Delivering top-quality education with updated curriculum.</p>
-                </div>
-              </li>
-              <li>
-                <span class="value-icon">✦</span>
-                <div>
-                  <strong>Integrity</strong>
-                  <p>Transparent fees, honest guidance, and ethical practices.</p>
-                </div>
-              </li>
-              <li>
-                <span class="value-icon">✦</span>
-                <div>
-                  <strong>Innovation</strong>
-                  <p>Embracing new technologies and modern teaching methods.</p>
-                </div>
-              </li>
-              <li>
-                <span class="value-icon">✦</span>
-                <div>
-                  <strong>Community</strong>
-                  <p>Supporting every student's journey from beginner to professional.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== COURSES ==================== -->
-    <section class="section courses" id="courses">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Our Courses</span>
-          <h2 class="section-title">Explore Our Programs</h2>
-          <p class="section-desc">Industry-relevant courses designed to launch your tech career.</p>
-        </div>
-        <div class="courses-grid">
-
-          <article class="course-card">
-            <div class="course-icon" aria-hidden="true">🌐</div>
-            <div class="course-image-placeholder" role="img" aria-label="Web Development course"></div>
-            <div class="course-body">
-              <h3 class="course-title">Web Development</h3>
-              <p class="course-desc">
-                Master HTML, CSS, JavaScript, and modern frameworks. Build responsive websites
-                and full-stack applications from scratch.
-              </p>
-              <div class="course-meta">
-                <span class="course-duration">⏱ 6 Months</span>
-                <span class="course-level">Beginner – Advanced</span>
-              </div>
-              <a href="#contact" class="btn btn-secondary btn-sm">Learn More</a>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <div class="course-icon" aria-hidden="true">📊</div>
-            <div class="course-image-placeholder data-science" role="img" aria-label="Data Science course"></div>
-            <div class="course-body">
-              <h3 class="course-title">Data Science</h3>
-              <p class="course-desc">
-                Learn Python, statistics, machine learning, and data visualization.
-                Analyze real-world datasets and build predictive models.
-              </p>
-              <div class="course-meta">
-                <span class="course-duration">⏱ 8 Months</span>
-                <span class="course-level">Intermediate</span>
-              </div>
-              <a href="#contact" class="btn btn-secondary btn-sm">Learn More</a>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <div class="course-icon" aria-hidden="true">🐍</div>
-            <div class="course-image-placeholder python" role="img" aria-label="Python Programming course"></div>
-            <div class="course-body">
-              <h3 class="course-title">Python Programming</h3>
-              <p class="course-desc">
-                From fundamentals to advanced topics including automation, web scraping,
-                and application development with Django and Flask.
-              </p>
-              <div class="course-meta">
-                <span class="course-duration">⏱ 4 Months</span>
-                <span class="course-level">Beginner</span>
-              </div>
-              <a href="#contact" class="btn btn-secondary btn-sm">Learn More</a>
-            </div>
-          </article>
-
-          <article class="course-card">
-            <div class="course-icon" aria-hidden="true">🎨</div>
-            <div class="course-image-placeholder graphic" role="img" aria-label="Graphic Design course"></div>
-            <div class="course-body">
-              <h3 class="course-title">Graphic Design</h3>
-              <p class="course-desc">
-                Create stunning visuals with Photoshop, Illustrator, and Figma.
-                Learn branding, UI design, and print media production.
-              </p>
-              <div class="course-meta">
-                <span class="course-duration">⏱ 5 Months</span>
-                <span class="course-level">Beginner – Intermediate</span>
-              </div>
-              <a href="#contact" class="btn btn-secondary btn-sm">Learn More</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== FACULTY ==================== -->
-    <section class="section faculty" id="faculty">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Our Faculty</span>
-          <h2 class="section-title">Learn from Industry Experts</h2>
-          <p class="section-desc">Experienced professionals passionate about teaching and mentoring.</p>
-        </div>
-        <div class="faculty-grid">
-
-          <article class="faculty-card">
-            <div class="faculty-avatar" aria-hidden="true">
-              <span>RK</span>
-            </div>
-            <h3 class="faculty-name">Rajesh Kumar</h3>
-            <p class="faculty-designation">Senior Web Developer & Lead Instructor</p>
-            <p class="faculty-bio">
-              12+ years in full-stack development. Former tech lead at a Fortune 500 company.
-              Specializes in React, Node.js, and cloud architecture.
-            </p>
-          </article>
-
-          <article class="faculty-card">
-            <div class="faculty-avatar avatar-teal" aria-hidden="true">
-              <span>PS</span>
-            </div>
-            <h3 class="faculty-name">Priya Sharma</h3>
-            <p class="faculty-designation">Data Scientist & ML Instructor</p>
-            <p class="faculty-bio">
-              PhD in Computer Science with expertise in machine learning and AI.
-              Published researcher with 8 years of industry experience.
-            </p>
-          </article>
-
-          <article class="faculty-card">
-            <div class="faculty-avatar avatar-orange" aria-hidden="true">
-              <span>AM</span>
-            </div>
-            <h3 class="faculty-name">Amit Mehta</h3>
-            <p class="faculty-designation">Python & Automation Expert</p>
-            <p class="faculty-bio">
-              Certified Python developer and automation specialist. Has trained 2000+
-              students in scripting, Django, and DevOps fundamentals.
-            </p>
-          </article>
-
-          <article class="faculty-card">
-            <div class="faculty-avatar avatar-purple" aria-hidden="true">
-              <span>SJ</span>
-            </div>
-            <h3 class="faculty-name">Sneha Joshi</h3>
-            <p class="faculty-designation">Creative Director & Design Instructor</p>
-            <p class="faculty-bio">
-              Award-winning graphic designer with 10 years of experience in branding,
-              UI/UX design, and digital marketing creatives.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== STUDENT CORNER ==================== -->
-    <section class="section student-corner" id="student-corner">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Student Corner</span>
-          <h2 class="section-title">Stay Updated & Inspired</h2>
-          <p class="section-desc">Latest notices, achievements, and helpful resources for our students.</p>
-        </div>
-        <div class="student-grid">
-
-          <!-- Notice Board -->
-          <div class="notice-board">
-            <div class="panel-header">
-              <span class="panel-icon" aria-hidden="true">📌</span>
-              <h3>Notice Board</h3>
-            </div>
-            <ul class="notice-list">
-              <li class="notice-item">
-                <span class="notice-date">Aug 1, 2026</span>
-                <p class="notice-text">New batch for Web Development starts August 15. Limited seats available!</p>
-              </li>
-              <li class="notice-item">
-                <span class="notice-date">Jul 28, 2026</span>
-                <p class="notice-text">Holiday notice: Center closed on August 15 for Independence Day.</p>
-              </li>
-              <li class="notice-item">
-                <span class="notice-date">Jul 20, 2026</span>
-                <p class="notice-text">Free workshop on "Introduction to AI" — Open to all enrolled students.</p>
-              </li>
-              <li class="notice-item">
-                <span class="notice-date">Jul 10, 2026</span>
-                <p class="notice-text">Exam schedule for Data Science batch released. Check the student portal.</p>
-              </li>
-              <li class="notice-item">
-                <span class="notice-date">Jul 1, 2026</span>
-                <p class="notice-text">Summer internship placements announced. Apply before July 31.</p>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Achievements & Resources -->
-          <div class="achievements-panel">
-            <div class="panel-header">
-              <span class="panel-icon" aria-hidden="true">🏆</span>
-              <h3>Student Achievements</h3>
-            </div>
-            <div class="achievement-cards">
-              <div class="achievement-card">
-                <div class="achievement-badge">🥇</div>
-                <div>
-                  <h4>Rahul Verma</h4>
-                  <p>Placed at TCS as Junior Developer — Web Development Batch 2025</p>
-                </div>
-              </div>
-              <div class="achievement-card">
-                <div class="achievement-badge">🥈</div>
-                <div>
-                  <h4>Ananya Patel</h4>
-                  <p>Won 2nd place in State-Level Coding Hackathon 2026</p>
-                </div>
-              </div>
-              <div class="achievement-card">
-                <div class="achievement-badge">🥉</div>
-                <div>
-                  <h4>Vikram Singh</h4>
-                  <p>Completed Google Data Analytics Certificate — Data Science Batch</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="resources-block">
-              <h4>Quick Resources</h4>
-              <ul class="resources-list">
-                <li><a href="#">📄 Course Syllabus Downloads</a></li>
-                <li><a href="#">📚 E-Library & Study Materials</a></li>
-                <li><a href="#">💼 Placement Assistance Portal</a></li>
-                <li><a href="#">📝 Online Fee Payment</a></li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== CONTACT & LOCATION ==================== -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Get In Touch</span>
-          <h2 class="section-title">Location & Contact Us</h2>
-          <p class="section-desc">Visit us, call us, or send a message — we'd love to hear from you.</p>
-        </div>
-        <div class="contact-grid">
-
-              <div class="form-group">
-                <label for="course">Course of Interest <span class="required">*</span></label>
-                <select id="course" name="course" required>
-                  <option value="" disabled selected>Select a course</option>
-                  <option value="web-dev">Web Development</option>
-                  <option value="data-science">Data Science</option>
-                  <option value="python">Python Programming</option>
-                  <option value="graphic-design">Graphic Design</option>
-                  <option value="other">Other</option>
-                </select>
-                <span class="error-msg" id="course-error"></span>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" placeholder="Tell us about your goals or questions..."></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary btn-full">Submit Inquiry</button>
-            </form>
-          </div>
-
-          <!-- Contact Info & Map -->
-          <div class="contact-info-wrapper">
-            <div class="contact-details">
-              <h3>Visit Our Center</h3>
-              <div class="detail-item">
-                <span class="detail-icon" aria-hidden="true">📍</span>
-                <div>
-                  <strong>Address</strong>
-                  <p>123 Tech Park Road, Sector 5,<br>Near City Mall, New Delhi – 110001</p>
-                </div>
-              </div>
-              <div class="detail-item">
-                <span class="detail-icon" aria-hidden="true">📞</span>
-                <div>
-                  <strong>Phone</strong>
-                  <p>+91 98765 43210<br>+91 11 2345 6789</p>
-                </div>
-              </div>
-              <div class="detail-item">
-                <span class="detail-icon" aria-hidden="true">✉️</span>
-                <div>
-                  <strong>Email</strong>
-                  <p>info@vcctraining.com<br>admissions@vcctraining.com</p>
-                </div>
-              </div>
-              <div class="detail-item">
-                <span class="detail-icon" aria-hidden="true">🕐</span>
-                <div>
-                  <strong>Working Hours</strong>
-                  <p>Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: Closed</p>
-                </div>
-              </div>
-            </div>
-            <div class="map-wrapper">
-              <iframe
-                title="Vivekananda Computer Center Location"
-                src="https://maps.google.com/maps?q=New+Delhi+India&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="250"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="#home" class="logo footer-logo">
-          <span class="logo-icon" aria-hidden="true">💻</span>
-          <span class="logo-text">VCC<span class="logo-accent">Training</span></span>
-        </a>
-        <p class="footer-desc">
-          Empowering students with practical computer skills for a successful digital career since 2010.
+        <h1 class="hero-title font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+          Shape Your Future with
+          <span class="text-gradient"> Digital Skills</span>
+        </h1>
+        <p class="hero-desc text-lg sm:text-xl text-gray-400 max-w-xl leading-relaxed">
+          Welcome to Vivekananda Computer Center — your trusted destination for professional computer training, certification courses, and career-ready skills.
         </p>
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="Facebook">f</a>
-          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-          <a href="#" class="social-link" aria-label="Instagram">📷</a>
-          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        <div class="hero-cta flex flex-col sm:flex-row gap-4">
+          <a href="#courses" class="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary-600/30 hover:shadow-primary-600/50 transition-all hover:-translate-y-1">
+            Explore Courses <i class="fas fa-graduation-cap"></i>
+          </a>
+          <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/15 text-white px-8 py-4 rounded-xl font-semibold text-lg backdrop-blur-sm transition-all">
+            Contact Us <i class="fas fa-phone"></i>
+          </a>
+        </div>
+        <div class="hero-stats grid grid-cols-3 gap-4 pt-4">
+          <div class="text-center sm:text-left">
+            <div class="text-2xl sm:text-3xl font-bold text-primary-500 stat-number" data-target="500">0+</div>
+            <div class="text-sm text-gray-500">Students Trained</div>
+          </div>
+          <div class="text-center sm:text-left">
+            <div class="text-2xl sm:text-3xl font-bold text-primary-500 stat-number" data-target="15">0+</div>
+            <div class="text-sm text-gray-500">Expert Courses</div>
+          </div>
+          <div class="text-center sm:text-left">
+            <div class="text-2xl sm:text-3xl font-bold text-primary-500 stat-number" data-target="10">0+</div>
+            <div class="text-sm text-gray-500">Years Experience</div>
+          </div>
         </div>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#faculty">Faculty</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Courses</h4>
-        <ul>
-          <li><a href="#courses">Web Development</a></li>
-          <li><a href="#courses">Data Science</a></li>
-          <li><a href="#courses">Python Programming</a></li>
-          <li><a href="#courses">Graphic Design</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Contact</h4>
-        <ul>
-          <li>📍 New Delhi – 110001</li>
-          <li>📞 +91 98765 43210</li>
-          <li>✉️ info@vcctraining.com</li>
-        </ul>
+
+      <div class="hidden lg:block relative hero-cards">
+        <div class="relative dark-card rounded-3xl p-8 shadow-2xl">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="float-card dark-card rounded-2xl p-5">
+              <i class="fas fa-code text-primary-500 text-2xl mb-3"></i>
+              <h3 class="font-semibold text-white">Programming</h3>
+              <p class="text-sm text-gray-500 mt-1">C, C++, Python, Java</p>
+            </div>
+            <div class="float-card dark-card rounded-2xl p-5 mt-8">
+              <i class="fas fa-palette text-primary-500 text-2xl mb-3"></i>
+              <h3 class="font-semibold text-white">Design</h3>
+              <p class="text-sm text-gray-500 mt-1">DTP, Photoshop, CorelDRAW</p>
+            </div>
+            <div class="float-card dark-card rounded-2xl p-5">
+              <i class="fas fa-chart-line text-primary-500 text-2xl mb-3"></i>
+              <h3 class="font-semibold text-white">Office Skills</h3>
+              <p class="text-sm text-gray-500 mt-1">MS Office, Tally, Excel</p>
+            </div>
+            <div class="float-card dark-card rounded-2xl p-5 mt-8">
+              <i class="fas fa-globe text-primary-500 text-2xl mb-3"></i>
+              <h3 class="font-semibold text-white">Web Dev</h3>
+              <p class="text-sm text-gray-500 mt-1">HTML, CSS, JavaScript</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="container">
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <a href="#about" class="text-white/60 hover:text-white transition-colors" aria-label="Scroll down">
+        <i class="fas fa-chevron-down text-2xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="py-20 lg:py-28 bg-dark-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-primary-500 font-semibold text-sm uppercase tracking-wider mb-3">About Us</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Empowering Students Since Day One</h2>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Vivekananda Computer Center is a leading computer training institute dedicated to providing quality education and practical skills for the digital age.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="reveal reveal-delay-1 relative">
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-black/50 ring-1 ring-white/10">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop" alt="Students learning at Vivekananda Computer Center" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="absolute -bottom-6 -right-6 bg-primary-600 text-white p-6 rounded-2xl shadow-xl shadow-primary-600/30 hidden sm:block">
+            <div class="text-3xl font-bold">10+</div>
+            <div class="text-sm text-orange-100">Years of Excellence</div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2 space-y-6">
+          <p class="text-gray-400 leading-relaxed text-lg">
+            Founded with the vision of making computer education accessible to everyone, we have trained hundreds of students who are now successfully placed in reputed organizations across various industries.
+          </p>
+          <p class="text-gray-400 leading-relaxed">
+            Our institute offers a wide range of courses from basic computer literacy to advanced programming and web development. With experienced faculty, modern computer labs, and a student-friendly environment, we ensure every learner gets the best training experience.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 pt-4">
+            <div class="flex items-start gap-4 p-4 dark-card rounded-2xl">
+              <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-chalkboard-teacher text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white">Expert Faculty</h3>
+                <p class="text-sm text-gray-500 mt-1">Industry-experienced trainers</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 dark-card rounded-2xl">
+              <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-certificate text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white">Certified Courses</h3>
+                <p class="text-sm text-gray-500 mt-1">Recognized certificates on completion</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 dark-card rounded-2xl">
+              <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-desktop text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white">Modern Labs</h3>
+                <p class="text-sm text-gray-500 mt-1">Latest software &amp; hardware</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 dark-card rounded-2xl">
+              <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-briefcase text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-white">Placement Support</h3>
+                <p class="text-sm text-gray-500 mt-1">Career guidance &amp; assistance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section id="courses" class="py-20 lg:py-28 bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-primary-500 font-semibold text-sm uppercase tracking-wider mb-3">Our Courses</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Courses &amp; Syllabus</h2>
+        <p class="text-gray-400 text-lg">Choose from our comprehensive range of computer courses designed for beginners to advanced learners.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+
+        <!-- Course 1 -->
+        <article class="reveal course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
+          <div class="bg-gradient-to-r from-primary-600 to-primary-700 p-6 text-white">
+            <div class="flex items-center justify-between mb-3">
+              <i class="fas fa-laptop text-2xl opacity-80"></i>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">3 Months</span>
+            </div>
+            <h3 class="font-display text-xl font-bold">DCA (Diploma in Computer Applications)</h3>
+          </div>
+          <div class="p-6">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i class="fas fa-list-ul text-primary-500 text-sm"></i> Course Content
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Fundamentals of Computer &amp; Operating System</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> MS Word, Excel, PowerPoint</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Internet &amp; Email</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Tally ERP Basics</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> DTP (PageMaker, CorelDRAW)</li>
+            </ul>
+            <button onclick="toggleSyllabus(this)" class="mt-4 text-primary-500 hover:text-primary-400 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
+              View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
+              <p><strong>Module 1:</strong> Computer fundamentals, hardware &amp; software basics</p>
+              <p><strong>Module 2:</strong> Windows OS, file management, settings</p>
+              <p><strong>Module 3:</strong> MS Office suite — documents, spreadsheets, presentations</p>
+              <p><strong>Module 4:</strong> Internet browsing, email, online safety</p>
+              <p><strong>Module 5:</strong> Tally accounting software introduction</p>
+              <p><strong>Module 6:</strong> Desktop publishing &amp; practical project</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course 2 -->
+        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
+          <div class="bg-gradient-to-r from-purple-600 to-purple-700 p-6 text-white">
+            <div class="flex items-center justify-between mb-3">
+              <i class="fas fa-code text-2xl opacity-80"></i>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">4 Months</span>
+            </div>
+            <h3 class="font-display text-xl font-bold">Programming in C &amp; C++</h3>
+          </div>
+          <div class="p-6">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i class="fas fa-list-ul text-purple-600 text-sm"></i> Course Content
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Introduction to Programming Logic</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Variables, Data Types &amp; Operators</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Control Structures &amp; Loops</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Functions &amp; Arrays</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> OOP Concepts in C++</li>
+            </ul>
+            <button onclick="toggleSyllabus(this)" class="mt-4 text-purple-600 hover:text-purple-700 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
+              View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
+              <p><strong>Module 1:</strong> Algorithm &amp; flowchart design</p>
+              <p><strong>Module 2:</strong> C programming — syntax, I/O, operators</p>
+              <p><strong>Module 3:</strong> Decision making, loops, switch-case</p>
+              <p><strong>Module 4:</strong> Functions, recursion, arrays, strings</p>
+              <p><strong>Module 5:</strong> Pointers, structures, file handling</p>
+              <p><strong>Module 6:</strong> C++ — classes, objects, inheritance, polymorphism</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course 3 -->
+        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
+          <div class="bg-gradient-to-r from-emerald-600 to-emerald-700 p-6 text-white">
+            <div class="flex items-center justify-between mb-3">
+              <i class="fab fa-python text-2xl opacity-80"></i>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">3 Months</span>
+            </div>
+            <h3 class="font-display text-xl font-bold">Python Programming</h3>
+          </div>
+          <div class="p-6">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i class="fas fa-list-ul text-emerald-600 text-sm"></i> Course Content
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Python Basics &amp; Syntax</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Data Structures &amp; Collections</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Functions &amp; Modules</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> File Handling &amp; Exception Handling</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Introduction to Django / Flask</li>
+            </ul>
+            <button onclick="toggleSyllabus(this)" class="mt-4 text-emerald-600 hover:text-emerald-700 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
+              View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
+              <p><strong>Module 1:</strong> Python installation, IDE setup, basics</p>
+              <p><strong>Module 2:</strong> Variables, data types, operators, strings</p>
+              <p><strong>Module 3:</strong> Lists, tuples, dictionaries, sets</p>
+              <p><strong>Module 4:</strong> Conditional statements, loops, comprehensions</p>
+              <p><strong>Module 5:</strong> Functions, lambda, modules, packages</p>
+              <p><strong>Module 6:</strong> OOP, file I/O, error handling, mini project</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course 4 -->
+        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
+          <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-6 text-white">
+            <div class="flex items-center justify-between mb-3">
+              <i class="fas fa-globe text-2xl opacity-80"></i>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">6 Months</span>
+            </div>
+            <h3 class="font-display text-xl font-bold">Full Stack Web Development</h3>
+          </div>
+          <div class="p-6">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i class="fas fa-list-ul text-orange-500 text-sm"></i> Course Content
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> HTML5, CSS3 &amp; Responsive Design</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> JavaScript &amp; DOM Manipulation</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> React.js Fundamentals</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Node.js &amp; Express.js</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> MongoDB &amp; REST APIs</li>
+            </ul>
+            <button onclick="toggleSyllabus(this)" class="mt-4 text-orange-500 hover:text-orange-600 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
+              View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
+              <p><strong>Module 1:</strong> HTML5 semantic tags, forms, accessibility</p>
+              <p><strong>Module 2:</strong> CSS3, Flexbox, Grid, Tailwind CSS</p>
+              <p><strong>Module 3:</strong> JavaScript ES6+, async/await, fetch API</p>
+              <p><strong>Module 4:</strong> React components, hooks, state management</p>
+              <p><strong>Module 5:</strong> Node.js backend, Express routing, middleware</p>
+              <p><strong>Module 6:</strong> MongoDB, authentication, full-stack project</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course 5 -->
+        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
+          <div class="bg-gradient-to-r from-rose-600 to-rose-700 p-6 text-white">
+            <div class="flex items-center justify-between mb-3">
+              <i class="fas fa-calculator text-2xl opacity-80"></i>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">2 Months</span>
+            </div>
+            <h3 class="font-display text-xl font-bold">Tally ERP with GST</h3>
+          </div>
+          <div class="p-6">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i class="fas fa-list-ul text-rose-600 text-sm"></i> Course Content
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Company Creation &amp; Configuration</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Ledger &amp; Voucher Entry</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> GST Configuration &amp; Returns</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Inventory Management</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Financial Reports &amp; Payroll</li>
+            </ul>
+            <button onclick="toggleSyllabus(this)" class="mt-4 text-rose-600 hover:text-rose-700 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
+              View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
+              <p><strong>Module 1:</strong> Tally interface, company setup, groups</p>
+              <p><strong>Module 2:</strong> Accounting vouchers, bank reconciliation</p>
+              <p><strong>Module 3:</strong> GST registration, invoicing, returns filing</p>
+              <p><strong>Module 4:</strong> Stock groups, godowns, purchase &amp; sales</p>
+              <p><strong>Module 5:</strong> Balance sheet, P&amp;L, cash flow statements</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course 6 -->
+        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
+          <div class="bg-gradient-to-r from-cyan-600 to-cyan-700 p-6 text-white">
+            <div class="flex items-center justify-between mb-3">
+              <i class="fas fa-paint-brush text-2xl opacity-80"></i>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">2 Months</span>
+            </div>
+            <h3 class="font-display text-xl font-bold">Graphic Design &amp; DTP</h3>
+          </div>
+          <div class="p-6">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i class="fas fa-list-ul text-cyan-600 text-sm"></i> Course Content
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Adobe Photoshop</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> CorelDRAW</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Page Layout &amp; Typography</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Logo &amp; Banner Design</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Print-Ready File Preparation</li>
+            </ul>
+            <button onclick="toggleSyllabus(this)" class="mt-4 text-cyan-600 hover:text-cyan-700 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
+              View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
+              <p><strong>Module 1:</strong> Design principles, color theory, typography</p>
+              <p><strong>Module 2:</strong> Photoshop — layers, masks, retouching</p>
+              <p><strong>Module 3:</strong> CorelDRAW — vector graphics, illustrations</p>
+              <p><strong>Module 4:</strong> Brochures, flyers, business cards</p>
+              <p><strong>Module 5:</strong> Portfolio project &amp; print production</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-12 reveal">
+        <a href="#apply" class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg shadow-primary-600/30 transition-all hover:-translate-y-0.5">
+          Enroll in a Course <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty -->
+  <section id="faculty" class="py-20 lg:py-28 bg-dark-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-primary-500 font-semibold text-sm uppercase tracking-wider mb-3">Our Team</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Meet Our Faculty</h2>
+        <p class="text-gray-400 text-lg">Learn from experienced professionals who are passionate about teaching and student success.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Faculty 1 -->
+        <article class="reveal group dark-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-primary-600/20 group-hover:ring-primary-600/40 transition-all">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face" alt="Rajesh Kumar" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <h3 class="font-display text-lg font-bold text-white">Rajesh Kumar</h3>
+              <p class="text-primary-500 text-sm font-medium">Director &amp; Senior Trainer</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+            <i class="fas fa-graduation-cap text-primary-500 mr-2"></i>M.Tech (CSE), B.E. Computer Science — 15+ years teaching experience
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+            <i class="fas fa-phone text-primary-500"></i>
+            <a href="tel:+919876543210" class="hover:text-primary-500 transition-colors">+91 98765 43210</a>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-blue-400 hover:bg-blue-700 hover:text-white transition-all" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all shadow-sm" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="mailto:rajesh@vivekanandacc.com" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-gray-600 hover:bg-gray-800 hover:text-white transition-all shadow-sm" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Faculty 2 -->
+        <article class="reveal group dark-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-primary-600/20 group-hover:ring-primary-600/40 transition-all">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face" alt="Priya Sharma" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <h3 class="font-display text-lg font-bold text-white">Priya Sharma</h3>
+              <p class="text-primary-500 text-sm font-medium">Programming Instructor</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+            <i class="fas fa-graduation-cap text-primary-500 mr-2"></i>M.Sc. Computer Science, Oracle Certified — Python, Java, C++
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+            <i class="fas fa-phone text-primary-500"></i>
+            <a href="tel:+919876543211" class="hover:text-primary-500 transition-colors">+91 98765 43211</a>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-blue-400 hover:bg-blue-700 hover:text-white transition-all" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-pink-600 hover:bg-pink-600 hover:text-white transition-all shadow-sm" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:priya@vivekanandacc.com" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-gray-600 hover:bg-gray-800 hover:text-white transition-all shadow-sm" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Faculty 3 -->
+        <article class="reveal group dark-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-primary-600/20 group-hover:ring-primary-600/40 transition-all">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Amit Verma" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <h3 class="font-display text-lg font-bold text-white">Amit Verma</h3>
+              <p class="text-primary-500 text-sm font-medium">Web Development Trainer</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+            <i class="fas fa-graduation-cap text-primary-500 mr-2"></i>B.Tech (IT), Full Stack Developer — MERN Stack Specialist
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+            <i class="fas fa-phone text-primary-500"></i>
+            <a href="tel:+919876543212" class="hover:text-primary-500 transition-colors">+91 98765 43212</a>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-blue-400 hover:bg-blue-700 hover:text-white transition-all" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-gray-800 hover:bg-gray-800 hover:text-white transition-all shadow-sm" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:amit@vivekanandacc.com" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-gray-600 hover:bg-gray-800 hover:text-white transition-all shadow-sm" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Faculty 4 -->
+        <article class="reveal group dark-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-primary-600/20 group-hover:ring-primary-600/40 transition-all">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face" alt="Sneha Patel" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <h3 class="font-display text-lg font-bold text-white">Sneha Patel</h3>
+              <p class="text-primary-500 text-sm font-medium">Accounts &amp; Tally Trainer</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+            <i class="fas fa-graduation-cap text-primary-500 mr-2"></i>M.Com, Tally Certified Professional — GST &amp; Accounting Expert
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+            <i class="fas fa-phone text-primary-500"></i>
+            <a href="tel:+919876543213" class="hover:text-primary-500 transition-colors">+91 98765 43213</a>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-blue-400 hover:bg-blue-700 hover:text-white transition-all" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all shadow-sm" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="mailto:sneha@vivekanandacc.com" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-gray-600 hover:bg-gray-800 hover:text-white transition-all shadow-sm" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Faculty 5 -->
+        <article class="reveal group dark-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-primary-600/20 group-hover:ring-primary-600/40 transition-all">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&crop=face" alt="Vikram Singh" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <h3 class="font-display text-lg font-bold text-white">Vikram Singh</h3>
+              <p class="text-primary-500 text-sm font-medium">Graphic Design Instructor</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+            <i class="fas fa-graduation-cap text-primary-500 mr-2"></i>Diploma in Fine Arts, Adobe Certified — Photoshop &amp; CorelDRAW Expert
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+            <i class="fas fa-phone text-primary-500"></i>
+            <a href="tel:+919876543214" class="hover:text-primary-500 transition-colors">+91 98765 43214</a>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-blue-400 hover:bg-blue-700 hover:text-white transition-all" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-pink-600 hover:bg-pink-600 hover:text-white transition-all shadow-sm" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:vikram@vivekanandacc.com" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-gray-600 hover:bg-gray-800 hover:text-white transition-all shadow-sm" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Faculty 6 -->
+        <article class="reveal group dark-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-primary-600/20 group-hover:ring-primary-600/40 transition-all">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face" alt="Anjali Mehta" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div>
+              <h3 class="font-display text-lg font-bold text-white">Anjali Mehta</h3>
+              <p class="text-primary-500 text-sm font-medium">MS Office &amp; DCA Trainer</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+            <i class="fas fa-graduation-cap text-primary-500 mr-2"></i>B.Sc. IT, Microsoft Office Specialist — 8+ years experience
+          </p>
+          <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+            <i class="fas fa-phone text-primary-500"></i>
+            <a href="tel:+919876543215" class="hover:text-primary-500 transition-colors">+91 98765 43215</a>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-blue-400 hover:bg-blue-700 hover:text-white transition-all" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all shadow-sm" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="mailto:anjali@vivekanandacc.com" class="w-10 h-10 bg-dark-600 rounded-xl flex items-center justify-center text-gray-600 hover:bg-gray-800 hover:text-white transition-all shadow-sm" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Corner -->
+  <section id="student-corner" class="py-20 lg:py-28 bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-primary-500 font-semibold text-sm uppercase tracking-wider mb-3">Student Corner</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Memories &amp; Milestones</h2>
+        <p class="text-gray-400 text-lg">Glimpses from our events, celebrations, and proud moments with our students.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <figure class="reveal group relative rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/30 transition-all aspect-[4/3] cursor-pointer" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=450&fit=crop" alt="Annual Day Celebration 2025" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+            <span class="text-primary-500 text-xs font-semibold uppercase tracking-wider mb-1">Annual Day</span>
+            <h3 class="text-white font-semibold text-lg">Annual Day Celebration 2025</h3>
+          </figcaption>
+        </figure>
+
+        <figure class="reveal group relative rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/30 transition-all aspect-[4/3] cursor-pointer" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=450&fit=crop" alt="Certificate Distribution Ceremony" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+            <span class="text-primary-500 text-xs font-semibold uppercase tracking-wider mb-1">Ceremony</span>
+            <h3 class="text-white font-semibold text-lg">Certificate Distribution Ceremony</h3>
+          </figcaption>
+        </figure>
+
+        <figure class="reveal group relative rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/30 transition-all aspect-[4/3] cursor-pointer" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=450&fit=crop" alt="Computer Lab Training Session" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+            <span class="text-primary-500 text-xs font-semibold uppercase tracking-wider mb-1">Workshop</span>
+            <h3 class="text-white font-semibold text-lg">Computer Lab Training Session</h3>
+          </figcaption>
+        </figure>
+
+        <figure class="reveal group relative rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/30 transition-all aspect-[4/3] cursor-pointer" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=450&fit=crop" alt="Group Project Presentation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+            <span class="text-primary-500 text-xs font-semibold uppercase tracking-wider mb-1">Project Day</span>
+            <h3 class="text-white font-semibold text-lg">Group Project Presentation</h3>
+          </figcaption>
+        </figure>
+
+        <figure class="reveal group relative rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/30 transition-all aspect-[4/3] cursor-pointer" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=450&fit=crop" alt="Tech Fest & Hackathon 2025" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+            <span class="text-primary-500 text-xs font-semibold uppercase tracking-wider mb-1">Tech Fest</span>
+            <h3 class="text-white font-semibold text-lg">Tech Fest &amp; Hackathon 2025</h3>
+          </figcaption>
+        </figure>
+
+        <figure class="reveal group relative rounded-2xl overflow-hidden border border-white/10 hover:border-primary-500/30 transition-all aspect-[4/3] cursor-pointer" onclick="openLightbox(this)">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=450&fit=crop" alt="Farewell Party for Batch 2024" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+          <figcaption class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+            <span class="text-primary-500 text-xs font-semibold uppercase tracking-wider mb-1">Farewell</span>
+            <h3 class="text-white font-semibold text-lg">Farewell Party — Batch 2024</h3>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center p-4" onclick="closeLightbox(event)">
+    <button class="absolute top-4 right-4 text-white text-3xl hover:text-primary-500 transition-colors z-10" onclick="closeLightbox(event)" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain" />
+    <p id="lightbox-caption" class="absolute bottom-8 text-white text-center text-lg font-medium"></p>
+  </div>
+
+  <!-- Contact Us -->
+  <section id="contact" class="py-20 lg:py-28 bg-dark-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-primary-500 font-semibold text-sm uppercase tracking-wider mb-3">Get In Touch</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">Contact Us</h2>
+        <p class="text-gray-400 text-lg">Have questions? Reach out to us — we'd love to hear from you!</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <!-- Contact Info -->
+        <div class="reveal reveal-delay-1 space-y-8">
+          <div class="dark-card rounded-2xl p-8">
+            <h3 class="font-display text-xl font-bold text-white mb-6">Contact Information</h3>
+
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-phone text-white"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-white">Phone</p>
+                  <a href="tel:+919876543210" class="text-primary-500 hover:text-primary-400 text-lg">+91 98765 43210</a>
+                  <p class="text-sm text-gray-500 mt-1">Mon – Sat, 9:00 AM – 7:00 PM</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-envelope text-white"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-white">Email</p>
+                  <a href="mailto:info@vivekanandacc.com" class="text-primary-500 hover:text-primary-400">info@vivekanandacc.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-map-marker-alt text-white"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-white">Address</p>
+                  <p class="text-gray-400">123, Main Road, Near City Mall<br />Your City, State — 123456</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div>
+            <h3 class="font-display text-xl font-bold text-white mb-4">Follow Us</h3>
+            <div class="flex flex-wrap gap-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-all hover:-translate-y-0.5 shadow-lg">
+                <i class="fab fa-facebook-f text-lg"></i> Facebook
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-xl font-medium transition-all hover:-translate-y-0.5 shadow-lg">
+                <i class="fab fa-instagram text-lg"></i> Instagram
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-medium transition-all hover:-translate-y-0.5 shadow-lg">
+                <i class="fab fa-youtube text-lg"></i> YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div id="apply" class="reveal reveal-delay-2 dark-card rounded-2xl p-8">
+          <h3 class="font-display text-xl font-bold text-white mb-2">Apply for Admission</h3>
+          <p class="text-gray-400 mb-6">Fill out the form below and we'll get back to you shortly.</p>
+
+          <form id="apply-form" class="space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-300 mb-1.5">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name" class="dark-input w-full px-4 py-3 rounded-xl border outline-none transition-all" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-300 mb-1.5">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX" class="dark-input w-full px-4 py-3 rounded-xl border outline-none transition-all" />
+              </div>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-1.5">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" class="dark-input w-full px-4 py-3 rounded-xl border outline-none transition-all" />
+            </div>
+            <div>
+              <label for="course" class="block text-sm font-medium text-gray-300 mb-1.5">Select Course *</label>
+              <select id="course" name="course" required class="dark-input w-full px-4 py-3 rounded-xl border outline-none transition-all">
+                <option value="">Choose a course</option>
+                <option value="dca">DCA (Diploma in Computer Applications)</option>
+                <option value="c-cpp">Programming in C &amp; C++</option>
+                <option value="python">Python Programming</option>
+                <option value="web-dev">Full Stack Web Development</option>
+                <option value="tally">Tally ERP with GST</option>
+                <option value="dtp">Graphic Design &amp; DTP</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-1.5">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Any questions or additional information..." class="dark-input w-full px-4 py-3 rounded-xl border outline-none transition-all resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary-600/40 hover:shadow-primary-600/50 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
+              <i class="fas fa-paper-plane"></i> Submit Application
+            </button>
+          </form>
+
+          <div id="form-success" class="hidden mt-6 p-4 bg-green-900/30 border border-green-500/30 rounded-xl text-green-400 text-center">
+            <i class="fas fa-check-circle mr-2"></i> Thank you! Your application has been submitted. We'll contact you soon.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-400 py-12 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center">
+              <i class="fas fa-laptop-code text-white"></i>
+            </div>
+            <div>
+              <span class="font-display font-bold text-white block">Vivekananda</span>
+              <span class="text-sm text-gray-400">Computer Center</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Empowering students with quality computer education and career-ready skills since 2014.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#courses" class="hover:text-white transition-colors">Courses</a></li>
+            <li><a href="#faculty" class="hover:text-white transition-colors">Faculty</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">More</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#student-corner" class="hover:text-white transition-colors">Student Corner</a></li>
+            <li><a href="#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+            <li><a href="#apply" class="hover:text-white transition-colors">Apply Now</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">Connect</h4>
+          <div class="flex gap-3">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-red-600 rounded-lg flex items-center justify-center transition-colors" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="tel:+919876543210" class="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-colors" aria-label="Phone"><i class="fas fa-phone"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
         <p>&copy; 2026 Vivekananda Computer Center. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-xl shadow-lg shadow-primary-600/40 opacity-0 invisible transition-all duration-300 flex items-center justify-center z-40 hover:-translate-y-1" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <script src="script.js"></script>
 </body>
