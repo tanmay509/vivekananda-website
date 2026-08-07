@@ -253,3 +253,14 @@
 .stat-number {
   display: inline-block;
 }
+
+/* Abacus section benefit cards */
+#abacus .dark-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#abacus .dark-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 12px 32px rgba(245, 158, 11, 0.12);
+}
