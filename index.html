@@ -269,7 +269,14 @@
       <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
 
         <!-- Course 1 -->
-        <article class="reveal course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
+        <article class="reveal course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10 flex flex-col">
+          <!-- Looping Video Header -->
+          <div class="h-48 w-full relative bg-gray-900">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+              <!-- Replace with your actual video URL -->
+              <source src="videos/dca.mp4" type="video/mp4">
+            </video>
+          </div>
           <div class="bg-gradient-to-r from-primary-600 to-primary-700 p-6 text-white">
             <div class="flex items-center justify-between mb-3">
               <i class="fas fa-laptop text-2xl opacity-80"></i>
@@ -277,7 +284,7 @@
             </div>
             <h3 class="font-display text-xl font-bold">DCA (Diploma in Computer Applications)</h3>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex-grow">
             <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
               <i class="fas fa-list-ul text-primary-500 text-sm"></i> Course Content
             </h4>
@@ -303,172 +310,199 @@
         </article>
 
         <!-- Course 2 -->
-        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
+        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10 flex flex-col">
+          <!-- Looping Video Header -->
+          <div class="h-48 w-full relative bg-gray-900">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+              <!-- Replace with your actual video URL -->
+              <source src="videos/dit.mp4" type="video/mp4">
+            </video>
+          </div>
           <div class="bg-gradient-to-r from-purple-600 to-purple-700 p-6 text-white">
             <div class="flex items-center justify-between mb-3">
               <i class="fas fa-code text-2xl opacity-80"></i>
-              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">4 Months</span>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">8 Months</span>
             </div>
-            <h3 class="font-display text-xl font-bold">Programming in C &amp; C++</h3>
+            <h3 class="font-display text-xl font-bold">DIT - Diploma in Information Technology</h3>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex-grow">
             <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
               <i class="fas fa-list-ul text-purple-600 text-sm"></i> Course Content
             </h4>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Introduction to Programming Logic</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Variables, Data Types &amp; Operators</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Control Structures &amp; Loops</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Functions &amp; Arrays</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> OOP Concepts in C++</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Computer Basics</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> OS, MS Office</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Programming in C/C++</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> DBMS-Database Management System</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Networking Basics</li>
             </ul>
             <button onclick="toggleSyllabus(this)" class="mt-4 text-purple-600 hover:text-purple-700 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
               View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
             </button>
             <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
-              <p><strong>Module 1:</strong> Algorithm &amp; flowchart design</p>
+              <p><strong>Module 1:</strong> Fundamentals Of Computer</p>
+              <p><strong>Module 5:</strong> Windows 10, MS office</p>
               <p><strong>Module 2:</strong> C programming — syntax, I/O, operators</p>
-              <p><strong>Module 3:</strong> Decision making, loops, switch-case</p>
               <p><strong>Module 4:</strong> Functions, recursion, arrays, strings</p>
-              <p><strong>Module 5:</strong> Pointers, structures, file handling</p>
-              <p><strong>Module 6:</strong> C++ — classes, objects, inheritance, polymorphism</p>
+              <p><strong>Module 3:</strong> DBMS-MS Access</p>
+              <p><strong>Module 6:</strong> Basics Of Computer Networks</p>
             </div>
           </div>
         </article>
 
         <!-- Course 3 -->
-        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
+        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10 flex flex-col">
+          <!-- Looping Video Header -->
+          <div class="h-48 w-full relative bg-gray-900">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+              <!-- Replace with your actual video URL -->
+              <source src="videos/dcp.mp4" type="video/mp4">
+            </video>
+          </div>
           <div class="bg-gradient-to-r from-emerald-600 to-emerald-700 p-6 text-white">
             <div class="flex items-center justify-between mb-3">
               <i class="fab fa-python text-2xl opacity-80"></i>
-              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">3 Months</span>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">8 Months</span>
             </div>
-            <h3 class="font-display text-xl font-bold">Python Programming</h3>
+            <h3 class="font-display text-xl font-bold">DCP - Diploma in Computer Programming</h3>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex-grow">
             <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
               <i class="fas fa-list-ul text-emerald-600 text-sm"></i> Course Content
             </h4>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Python Basics &amp; Syntax</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Data Structures &amp; Collections</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Functions &amp; Modules</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> File Handling &amp; Exception Handling</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Introduction to Django / Flask</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Fundamentals Of Programming</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Programming in C, C++</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Programming in JAVA</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Programming in PYTHON</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Introduction To WEB DEVELOPMENT</li>
             </ul>
             <button onclick="toggleSyllabus(this)" class="mt-4 text-emerald-600 hover:text-emerald-700 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
               View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
             </button>
             <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
-              <p><strong>Module 1:</strong> Python installation, IDE setup, basics</p>
+              <p><strong>Module 1:</strong> gcc installation, IDE setup, basics</p>
               <p><strong>Module 2:</strong> Variables, data types, operators, strings</p>
               <p><strong>Module 3:</strong> Lists, tuples, dictionaries, sets</p>
               <p><strong>Module 4:</strong> Conditional statements, loops, comprehensions</p>
               <p><strong>Module 5:</strong> Functions, lambda, modules, packages</p>
               <p><strong>Module 6:</strong> OOP, file I/O, error handling, mini project</p>
+              <p><strong>Module 7:</strong> HTML5, CSS3, JS</p>
             </div>
           </div>
         </article>
-
-        <!-- Course 4 -->
-        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
-          <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-6 text-white">
-            <div class="flex items-center justify-between mb-3">
-              <i class="fas fa-globe text-2xl opacity-80"></i>
-              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">6 Months</span>
-            </div>
-            <h3 class="font-display text-xl font-bold">Full Stack Web Development</h3>
+         <!-- Course 4 -->
+         <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10 flex flex-col">
+          <!-- Looping Video Header -->
+          <div class="h-48 w-full relative bg-gray-900">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+              <!-- Replace with your actual video URL -->
+              <source src="videos/tally.mp4" type="video/mp4">
+            </video>
           </div>
-          <div class="p-6">
-            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
-              <i class="fas fa-list-ul text-orange-500 text-sm"></i> Course Content
-            </h4>
-            <ul class="space-y-2 text-gray-400 text-sm">
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> HTML5, CSS3 &amp; Responsive Design</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> JavaScript &amp; DOM Manipulation</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> React.js Fundamentals</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Node.js &amp; Express.js</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> MongoDB &amp; REST APIs</li>
-            </ul>
-            <button onclick="toggleSyllabus(this)" class="mt-4 text-orange-500 hover:text-orange-600 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
-              View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
-            </button>
-            <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
-              <p><strong>Module 1:</strong> HTML5 semantic tags, forms, accessibility</p>
-              <p><strong>Module 2:</strong> CSS3, Flexbox, Grid, Tailwind CSS</p>
-              <p><strong>Module 3:</strong> JavaScript ES6+, async/await, fetch API</p>
-              <p><strong>Module 4:</strong> React components, hooks, state management</p>
-              <p><strong>Module 5:</strong> Node.js backend, Express routing, middleware</p>
-              <p><strong>Module 6:</strong> MongoDB, authentication, full-stack project</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Course 5 -->
-        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
-          <div class="bg-gradient-to-r from-rose-600 to-rose-700 p-6 text-white">
-            <div class="flex items-center justify-between mb-3">
-              <i class="fas fa-calculator text-2xl opacity-80"></i>
-              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">2 Months</span>
-            </div>
-            <h3 class="font-display text-xl font-bold">Tally ERP with GST</h3>
-          </div>
-          <div class="p-6">
-            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
-              <i class="fas fa-list-ul text-rose-600 text-sm"></i> Course Content
-            </h4>
-            <ul class="space-y-2 text-gray-400 text-sm">
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Company Creation &amp; Configuration</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Ledger &amp; Voucher Entry</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> GST Configuration &amp; Returns</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Inventory Management</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Financial Reports &amp; Payroll</li>
-            </ul>
-            <button onclick="toggleSyllabus(this)" class="mt-4 text-rose-600 hover:text-rose-700 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
-              View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
-            </button>
-            <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
-              <p><strong>Module 1:</strong> Tally interface, company setup, groups</p>
-              <p><strong>Module 2:</strong> Accounting vouchers, bank reconciliation</p>
-              <p><strong>Module 3:</strong> GST registration, invoicing, returns filing</p>
-              <p><strong>Module 4:</strong> Stock groups, godowns, purchase &amp; sales</p>
-              <p><strong>Module 5:</strong> Balance sheet, P&amp;L, cash flow statements</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Course 6 -->
-        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10">
           <div class="bg-gradient-to-r from-cyan-600 to-cyan-700 p-6 text-white">
             <div class="flex items-center justify-between mb-3">
               <i class="fas fa-paint-brush text-2xl opacity-80"></i>
-              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">2 Months</span>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">6 Months</span>
             </div>
-            <h3 class="font-display text-xl font-bold">Graphic Design &amp; DTP</h3>
+            <h3 class="font-display text-xl font-bold">DFA - Diploma in Financial Accounting</h3>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex-grow">
             <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
               <i class="fas fa-list-ul text-cyan-600 text-sm"></i> Course Content
             </h4>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Adobe Photoshop</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> CorelDRAW</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Page Layout &amp; Typography</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Logo &amp; Banner Design</li>
-              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Print-Ready File Preparation</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Accounting Basics</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> GST</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Tally Prime</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> MS Excel</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Payroll</li>
             </ul>
             <button onclick="toggleSyllabus(this)" class="mt-4 text-cyan-600 hover:text-cyan-700 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
               View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
             </button>
             <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
-              <p><strong>Module 1:</strong> Design principles, color theory, typography</p>
-              <p><strong>Module 2:</strong> Photoshop — layers, masks, retouching</p>
-              <p><strong>Module 3:</strong> CorelDRAW — vector graphics, illustrations</p>
-              <p><strong>Module 4:</strong> Brochures, flyers, business cards</p>
-              <p><strong>Module 5:</strong> Portfolio project &amp; print production</p>
+              <p><strong>Module 1:</strong> Basic Accounting</p>
+              <p><strong>Module 2:</strong> Basic Excel</p>
+              <p><strong>Module 3:</strong> Tally</p>
             </div>
           </div>
         </article>
+
+        <!-- Course 5 -->
+        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10 flex flex-col">
+          <!-- Looping Video Header -->
+          <div class="h-48 w-full relative bg-gray-900">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+              <!-- Replace with your actual video URL -->
+              <source src="videos/v.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-6 text-white">
+            <div class="flex items-center justify-between mb-3">
+              <i class="fas fa-globe text-2xl opacity-80"></i>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">12 Months</span>
+            </div>
+            <h3 class="font-display text-xl font-bold">Preliminary Smart School Course (PSSC-V)</h3>
+          </div>
+          <div class="p-6 flex-grow">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i class="fas fa-list-ul text-orange-500 text-sm"></i> Course Content
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Computer basics for Class 5 level</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Paint, MS Word, MS Paint</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Typing, Internet intro</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Educational games</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> NEP 2020 activity based learning</li>
+            </ul>
+            <button onclick="toggleSyllabus(this)" class="mt-4 text-orange-500 hover:text-orange-600 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
+              View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
+              <p><strong>Module 1:</strong> CBSE, ICSE class 5 Syllabus</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course 6-->
+        <article class="reveal reveal-delay-1 course-card bg-dark-700 rounded-2xl overflow-hidden border border-white/10 flex flex-col">
+          <!-- Looping Video Header -->
+          <div class="h-48 w-full relative bg-gray-900">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+              <!-- Replace with your actual video URL -->
+              <source src="videos/viii.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-6 text-white">
+            <div class="flex items-center justify-between mb-3">
+              <i class="fas fa-globe text-2xl opacity-80"></i>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">12 Months</span>
+            </div>
+            <h3 class="font-display text-xl font-bold">Preliminary Smart School Course (PSSC-VIII)</h3>
+          </div>
+          <div class="p-6 flex-grow">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2">
+              <i class="fas fa-list-ul text-orange-500 text-sm"></i> Course Content
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Computer basics for Class 5 level</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Paint, MS Word, MS Paint</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Typing, Internet intro</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Programming in Scratch</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> Educational games</li>
+              <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1 text-xs"></i> NEP 2020 activity based learning</li>
+            </ul>
+            <button onclick="toggleSyllabus(this)" class="mt-4 text-orange-500 hover:text-orange-600 text-sm font-semibold flex items-center gap-1 syllabus-toggle">
+              View Full Syllabus <i class="fas fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div class="syllabus-full hidden mt-4 pt-4 border-t border-white/10 text-sm text-gray-400 space-y-2">
+              <p><strong>Module 1:</strong> CBSE, ICSE class 5 Syllabus</p>
+            </div>
+          </div>
+        </article>
+
+       
 
       </div>
 
@@ -478,7 +512,8 @@
         </a>
       </div>
     </div>
-  </section>
+</section>
+
 
   <!-- Abacus Courses -->
   <section id="abacus" class="py-20 lg:py-28 bg-dark-900">
